@@ -5,7 +5,7 @@ bridge-authority-key-path: /opt/sui/keys/bridge.key
 run-client: false
 db-path: /opt/sui/data/mainnet.db
 sui:
-  sui-rpc-url: https://sui-rpc.publicnode.com
+  sui-rpc-url: https://rpc.mainnet.sui.io:443
   sui-bridge-chain-id: 0
 eth:
   eth-rpc-url: https://ethereum-rpc.publicnode.com

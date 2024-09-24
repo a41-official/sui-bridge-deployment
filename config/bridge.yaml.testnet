@@ -5,7 +5,7 @@ bridge-authority-key-path: /opt/sui/keys/bridge.key
 run-client: false
 db-path: /opt/sui/data/testnet.db
 sui:
-  sui-rpc-url: https://sui-testnet-rpc.publicnode.com
+  sui-rpc-url: https://rpc.testnet.sui.io:443
   sui-bridge-chain-id: 1
 eth:
   eth-rpc-url: https://ethereum-sepolia-rpc.publicnode.com
