@@ -1,0 +1,19 @@
+---
+server-listen-port: 9191
+metrics-port: 9184
+bridge-authority-key-path: /opt/sui/keys/bridge.key
+run-client: false
+db-path: /opt/sui/data/testnet.db
+sui:
+  sui-rpc-url: https://sui-testnet-rpc.publicnode.com
+  sui-bridge-chain-id: 1
+eth:
+  eth-rpc-url: https://ethereum-sepolia-rpc.publicnode.com
+  eth-bridge-proxy-address: "0xAE68F87938439afEEDd6552B0E83D2CbC2473623"
+  eth-bridge-chain-id: 11
+  eth-contracts-start-block-fallback: 6016000
+metrics-key-pair: put_your_metrics_key_pair_here
+metrics:
+  push-interval-seconds: 60
+  push-url: https://metrics-proxy.testnet.sui.io:8443/publish/metrics
+approved-governance-actions: []

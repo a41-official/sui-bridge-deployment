@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  haproxy:
+    image: haproxy:3.0.2
+    volumes:
+      - ./config/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    ports:
+      - "80:80"
+  bridgenode:
+    image: mysten/sui-tools:${IMAGE_TAG:-testnet}
+    ports:
+    - "9191:9191"
+    - "9184:9184"
+    volumes:
+    - ./config/bridge.yaml:/opt/sui/config/bridge.yaml:ro
+    - ./keys/bridge.key:/opt/sui/keys/bridge.key:ro
+    - ./data:/opt/sui/data
+    environment:
+      - RUST_LOG=info,sui_bridge=debug
+    command: ["/usr/local/bin/sui-bridge", "--config-path", "/opt/sui/config/bridge.yaml"]
