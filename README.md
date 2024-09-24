@@ -21,5 +21,5 @@ docker compose up -d
 # Bridge Cli
 ```bash
 source .env
-docker run -ti --rm -v mysten/sui-tools:$IMAGE_TAG sui-bridge-cli --help
+docker run -ti --rm mysten/sui-tools:$IMAGE_TAG sui-bridge-cli --help
 ```
