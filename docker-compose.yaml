@@ -9,8 +9,7 @@ services:
   bridgenode:
     image: mysten/sui-tools:${IMAGE_TAG:-testnet}
     ports:
-    - "9191:9191"
-    - "9184:9184"
+    - ${BRIDGE_PORT_METRICS:-9184}:9184
     volumes:
     - ./config/bridge.yaml:/opt/sui/config/bridge.yaml:ro
     - ./keys/bridge.key:/opt/sui/keys/bridge.key:ro
