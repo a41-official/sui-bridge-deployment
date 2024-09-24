@@ -4,7 +4,7 @@
 
 ## 1. Set Image Tag
 ```bash
-cp .env.example .env
+cp .env.(mainnet|testnet) .env
 vi .env
 ```
 
