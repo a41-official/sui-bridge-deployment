@@ -28,3 +28,8 @@ docker run -ti --rm mysten/sui-tools:$IMAGE_TAG sui-bridge-cli --help
 ```bash
 docker run -ti --rm -v ./config:/opt/sui/config mysten/sui-tools:$IMAGE_TAG sui-bridge-cli create-bridge-node-config-template /opt/sui/config/bridge.yaml
 ```
+
+### Generate Key
+```bash
+docker run -ti --rm -v ./keys:/opt/sui/keys mysten/sui-tools:$IMAGE_TAG sui-bridge-cli create-bridge-validator-key /opt/sui/keys/bridge.key
+```
