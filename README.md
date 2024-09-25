@@ -1,25 +1,30 @@
 # sui-bridge-deployment
 
-# Setup
+## Setup
 
-## 1. Set Image Tag
+### 1. Set Image Tag
 ```bash
 cp .env.(mainnet|testnet) .env
 vi .env
 ```
 
-## 2. Create config
+### 2. Create config
 ```bash
 cp ./config/bridge.yaml.(mainnet|testnet) ./config/bridge.yaml
 ```
 
-# Run
+## Run
 ```bash
 docker compose up -d
 ```
 
-# Bridge Cli
+## Bridge Cli
 ```bash
 source .env
 docker run -ti --rm mysten/sui-tools:$IMAGE_TAG sui-bridge-cli --help
+```
+
+### Generate Config (for new `metrics-key-pair`)
+```bash
+docker run -ti --rm -v ./config:/opt/sui/config mysten/sui-tools:$IMAGE_TAG sui-bridge-cli create-bridge-node-config-template /opt/sui/config/bridge.yaml
 ```
